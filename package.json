@@ -1,0 +1,9 @@
+{
+  "name": "stockpileapp.co",
+  "version": "1.0.0",
+  "description": "The public website for Stockpile, an app that manages stuff for organizations.",
+  "main": "index.html",
+  "repository": "https://github.com/stockpile-co/stockpileapp.co",
+  "author": "Stockpile Team <info@stockpileapp.co>",
+  "license": "UNLICENSED"
+}
