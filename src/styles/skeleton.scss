@@ -7,6 +7,26 @@
 * 12/11/2014
 */
 
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$color-body-font: #222;
+$color-link: #1EAEDB;
+$color-link-hover: #0FA0CE;
+$color-button-font: #555;
+$color-button-border: #bbb;
+$color-button-focus-active-border: #888;
+$color-button-focus-active-font: #333;
+$color-button-primary-font:  #FFF;
+$color-button-primary-border: #33C3F0;
+$color-button-primary-background: #33C3F0;
+$color-button-primary-focus-active-font: #FFF;
+$color-button-primary-focus-active-border: #1EAEDB;
+$color-button-primary-focus-active-background: #1EAEDB;
+$color-input-border: #D1D1D1;
+$color-input-background:  #fff;
+$color-input-focus-border: #33C3F0;
+$color-table-border-bottom: #E1E1E1;
+
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
@@ -19,7 +39,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+  color: $color-body-font; }
 
 
 /* Typography
@@ -52,9 +72,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: $color-link; }
 a:hover {
-  color: #0FA0CE; }
+  color: $color-link-hover; }
 
 
 /* Buttons
@@ -67,13 +87,13 @@ input[type="button"] {
   display: inline-block;
   background-color: transparent;
   border-radius: 4px;
-  color: #555;
+  color: $color-button-font;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid #bbb;
+  border: 1px solid $color-button-border;
   height: 38px;
   line-height: 38px;
   padding: 0 30px;
@@ -91,17 +111,17 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  border-color: #888;
-  color: #333;
+  border-color: $color-button-focus-active-border;
+  color: $color-button-focus-active-font;
   outline: 0; }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: #FFF;
-  border-color: #33C3F0;
-  background-color: #33C3F0; }
+  color: $color-button-primary-font;
+  border-color: $color-button-primary-border;
+  background-color: $color-button-primary-background; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -112,9 +132,9 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  background-color: #1EAEDB;
-  border-color: #1EAEDB;
-  color: #FFF; }
+  background-color: $color-button-primary-focus-active-background;
+  border-color: $color-button-primary-focus-active-border;
+  color: $color-button-primary-focus-active-font; }
 
 
 /* Forms
@@ -125,12 +145,12 @@ input[type="text"],
 input[type="password"],
 textarea,
 select {
-  border: 1px solid #D1D1D1;
+  border: 1px solid $color-input-border;
   height: 36px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   border-radius: 4px;
   box-shadow: none;
-  background: #fff; }
+  background: $color-input-background; }
 /* Removes awkard default styles on some inputs */
 input[type="email"],
 input[type="search"],
@@ -150,7 +170,7 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid $color-input-focus-border;
   outline: 0; }
 label,
 legend {
@@ -210,7 +230,7 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid $color-table-border-bottom; }
 th:first-child,
 td:first-child {
   padding-left: 0; }
@@ -253,13 +273,3 @@ p {
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box; }
-
-
-/* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1;
-}
