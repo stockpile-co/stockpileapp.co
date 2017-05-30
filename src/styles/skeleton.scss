@@ -7,109 +7,44 @@
 * 12/11/2014
 */
 
-
-/* Table of contents
-–––––––––––––––––––––––––––––––––––––––––––––––––– 
-- Grid
-- Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
-- Spacing
-- Utilities
-- Clearing
-- Media Queries
-*/
-
-
-/* Grid
+/* Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.container {
-  position: relative; 
-  width: 80%; 
-  max-width: 960px; 
-  margin: 0 auto; 
-  padding: 0; }
-.container .column,        
-.container .columns { 
-  float: left; 
-  width: 100%; 
-  box-sizing: border-box; }
-.row { 
-  margin-bottom: 2rem; }
-.row .column:first-child,        
-.row .columns:first-child { 
-  margin-left: 0; }
-
-/* For devices larger than 550px */
-@media (min-width: 550px) {
-  
-  .container .column,
-  .container .columns {
-    margin-left: 4%; }
-  
-  .container .one.column,
-  .container .one.columns          { width: 4.66666666667%; }
-  .container .two.columns          { width: 13.3333333333%; }
-  .container .three.columns        { width: 22%;            }
-  .container .four.columns         { width: 30.6666666667%; }
-  .container .five.columns         { width: 39.3333333333%; }
-  .container .six.columns          { width: 48%;            }
-  .container .seven.columns        { width: 56.6666666667%; }
-  .container .eight.columns        { width: 65.3333333333%; }
-  .container .nine.columns         { width: 74.0%;          }
-  .container .ten.columns          { width: 82.6666666667%; }
-  .container .eleven.columns       { width: 91.3333333333%; }
-  .container .twelve.columns       { width: 100%; margin-left: 0; }
-
-  .container .one-third.column     { width: 30.6666666667%; }
-  .container .two-thirds.column    { width: 65.3333333333%; }
-
-  .container .one-half.column      { width: 48%; }
-
-  /* Offsets */
-  .container .row .offset-by-one        { margin-left: 8.66666666667%; }
-  .container .row .offset-by-two        { margin-left: 17.3333333333%; }
-  .container .row .offset-by-three      { margin-left: 26%;            }
-  .container .row .offset-by-four       { margin-left: 34.6666666667%; }
-  .container .row .offset-by-five       { margin-left: 43.3333333333%; }
-  .container .row .offset-by-six        { margin-left: 52%;            }
-  .container .row .offset-by-seven      { margin-left: 60.6666666667%; }
-  .container .row .offset-by-eight      { margin-left: 69.3333333333%; }
-  .container .row .offset-by-nine       { margin-left: 78.0%;          }
-  .container .row .offset-by-ten        { margin-left: 86.6666666667%; }
-  .container .row .offset-by-eleven     { margin-left: 95.3333333333%; }
-
-  .container .row .offset-by-one-third  { margin-left: 34.6666666667%; }
-  .container .row .offset-by-two-thirds { margin-left: 69.3333333333%; }
-
-  .container .row .offset-by-one-half   { margin-left: 52%; }
-
-}
-
+$color-body-font: #222;
+$color-link: #1EAEDB;
+$color-link-hover: #0FA0CE;
+$color-button-font: #555;
+$color-button-border: #bbb;
+$color-button-focus-active-border: #888;
+$color-button-focus-active-font: #333;
+$color-button-primary-font:  #FFF;
+$color-button-primary-border: #33C3F0;
+$color-button-primary-background: #33C3F0;
+$color-button-primary-focus-active-font: #FFF;
+$color-button-primary-focus-active-border: #1EAEDB;
+$color-button-primary-focus-active-background: #1EAEDB;
+$color-input-border: #D1D1D1;
+$color-input-background:  #fff;
+$color-input-focus-border: #33C3F0;
+$color-table-border-bottom: #E1E1E1;
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
-html is set to 62.5% so that all the REM measurements throughout Skeleton 
+html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
-html { 
-  font-size: 62.5%; } 
+html {
+  font-size: 62.5%; }
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $color-body-font; }
 
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 { 
+h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 2rem; }
@@ -136,13 +71,13 @@ p {
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a { 
-  color: #1EAEDB; }
-a:hover { 
-  color: #0FA0CE; }
+a {
+  color: $color-link; }
+a:hover {
+  color: $color-link-hover; }
 
 
-/* Buttons 
+/* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
 button,
@@ -152,18 +87,18 @@ input[type="button"] {
   display: inline-block;
   background-color: transparent;
   border-radius: 4px;
-  color: #555;
+  color: $color-button-font;
   text-align: center;
   font-size: 11px;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid #bbb;
+  border: 1px solid $color-button-border;
   height: 38px;
   line-height: 38px;
   padding: 0 30px;
   letter-spacing: .1rem;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   white-space: nowrap;
   box-sizing: border-box; }
 .button:hover,
@@ -176,17 +111,17 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  border-color: #888;
-  color: #333;
+  border-color: $color-button-focus-active-border;
+  color: $color-button-focus-active-font;
   outline: 0; }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: #FFF;
-  border-color: #33C3F0;
-  background-color: #33C3F0; }
+  color: $color-button-primary-font;
+  border-color: $color-button-primary-border;
+  background-color: $color-button-primary-background; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -197,9 +132,9 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  background-color: #1EAEDB;
-  border-color: #1EAEDB;
-  color: #FFF; }
+  background-color: $color-button-primary-focus-active-background;
+  border-color: $color-button-primary-focus-active-border;
+  color: $color-button-primary-focus-active-font; }
 
 
 /* Forms
@@ -210,12 +145,12 @@ input[type="text"],
 input[type="password"],
 textarea,
 select {
-  border: 1px solid #D1D1D1;
+  border: 1px solid $color-input-border;
   height: 36px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   border-radius: 4px;
   box-shadow: none;
-  background: #fff; }
+  background: $color-input-background; }
 /* Removes awkard default styles on some inputs */
 input[type="email"],
 input[type="search"],
@@ -235,7 +170,7 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid $color-input-focus-border;
   outline: 0; }
 label,
 legend {
@@ -256,18 +191,18 @@ label > .label-body {
 
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-ul { 
+ul {
   list-style: circle inside; }
-ol { 
+ol {
   list-style: decimal inside; }
 ol, ul {
   margin-top: 0;
   padding-left: 0; }
-ul ul, 
+ul ul,
 ul ol,
-ol ol, 
-ol ul { 
-  margin: 1.5rem 0 1.5rem 3rem; 
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%; }
 li {
   margin-bottom: 1rem; }
@@ -295,7 +230,7 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid $color-table-border-bottom; }
 th:first-child,
 td:first-child {
   padding-left: 0; }
@@ -338,54 +273,3 @@ p {
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box; }
-.u-pull-right {
-  float: right; }
-.u-pull-left {
-  float: left; }
-
-
-/* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1;
-}
-
-/* Clearing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* Self Clearing Goodness */
-.container:after,
-.row:after,
-.u-cf { 
-  content: "";
-  display: table;
-  clear: both; }
-
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries 
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons secion and style it 
-there. 
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
