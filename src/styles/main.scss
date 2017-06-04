@@ -11,14 +11,22 @@ nav {
     color: $snow;
     background-color: $deepTuscanRed;
 
+    .stockpile-logo {
+        display: block;
+        height: 6rem;
+        background-image: url('../images/stockpile-logotype-snow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
     /* Vertically center title */
     h1 {
-        padding-top: 1.3rem;
+        padding-top: 1rem;
     }
 
     @media (min-width: 550px) {
         h1 {
-            padding-top: 0.5rem;
+            padding-top: 0.9rem;
         }
     }
 }
