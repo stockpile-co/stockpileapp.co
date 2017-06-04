@@ -3,3 +3,22 @@
 body {
     font-family: 'Assistant', sans-serif;
 }
+h1, h2 {
+    letter-spacing: 1px; /* Override Skeleton */
+}
+nav {
+    height: 8rem;
+    color: $snow;
+    background-color: $deepTuscanRed;
+
+    /* Vertically center title */
+    h1 {
+        padding-top: 1.3rem;
+    }
+
+    @media (min-width: 550px) {
+        h1 {
+            padding-top: 0.5rem;
+        }
+    }
+}
