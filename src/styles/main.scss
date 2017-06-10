@@ -1,4 +1,5 @@
 @import 'vars.scss';
+@import 'nav.scss';
 
 body {
     font-family: 'Assistant', sans-serif;
@@ -9,31 +10,6 @@ h1, h2 {
 p {
     font-size: 2rem;
     text-align: left;
-}
-nav {
-    height: 8rem;
-    margin-bottom: 2rem;
-    color: $snow;
-    background-color: $deepTuscanRed;
-
-    .stockpile-logo {
-        display: block;
-        height: 6rem;
-        background-image: url('../images/stockpile-logotype-snow.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
-    /* Vertically center title */
-    h1 {
-        padding-top: 1rem;
-    }
-
-    @media (min-width: 550px) {
-        h1 {
-            padding-top: 1.1rem;
-        }
-    }
 }
 header {
     &.container { /* Override Skeleton */
