@@ -39,9 +39,8 @@ header {
         $tipi-size: 12rem;
         height: $tipi-size;
         width: $tipi-size;
-        background-size: contain;
-        background-repeat: no-repeat;
         background-image: url('../images/stockpile-tipi.svg');
+        @include background-image-properties();
     }
     @media (min-width: 500px) {
         .tipi {

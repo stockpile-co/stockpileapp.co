@@ -5,3 +5,8 @@ $paleTurquoise: #B1EDE8;
 $deepTuscanRed: #6D435A;
 $onyx: #352D39;
 
+// Mixins
+@mixin background-image-properties() {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
