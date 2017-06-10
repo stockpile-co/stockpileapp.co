@@ -15,7 +15,10 @@ h1, h2 {
 }
 p {
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
+    @media (min-width: 1022px) {
+        text-align: left;
+    }
 }
 header {
     &.container { /* Override Skeleton */
@@ -49,26 +52,21 @@ section {
     margin-bottom: 3rem;
     padding: 2rem;
 }
-.stockpile-inventory {
+.image {
     width: 100%;
-    height: $screenshot-height;
-    background-image: url('../images/stockpile-inventory.png');
+    min-height: 40rem;
+    margin-bottom: 2rem;
     @include background-image-properties(contain);
+}
+.stockpile-inventory {
+    background-image: url('../images/stockpile-inventory.png');
 }
 .stockpile-scan {
-    width: 100%;
-    height: $screenshot-height;
     background-image: url('../images/stockpile-scan.png');
-    @include background-image-properties(contain);
 }
 .photography-kit {
-    width: 100%;
-    height: $screenshot-height;
     background-image: url('../images/photography-kit.png');
-    @include background-image-properties(contain);
-    @media (min-width: 600px) {
-        height: 30rem;
-    }
+    min-height: 25rem;
 }
 .equipment-overhead {
     width: 100%;
