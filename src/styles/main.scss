@@ -26,6 +26,8 @@ header {
         $tipi-size: 12rem;
         height: $tipi-size;
         width: $tipi-size;
+        margin-right: auto;
+        margin-left: auto;
         background-image: url('../images/stockpile-tipi.svg');
         @include background-image-properties(contain);
     }
