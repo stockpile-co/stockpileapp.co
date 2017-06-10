@@ -55,7 +55,7 @@ section {
 }
 .photography-kit {
     width: 100%;
-    height: 100%;
+    height: $screenshot-height;
     background-image: url('../images/photography-kit.png');
     @include background-image-properties(contain);
     @media (min-width: 600px) {
