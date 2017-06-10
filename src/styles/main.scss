@@ -75,10 +75,16 @@ section {
     align-items: center;
     justify-content: center;
     h2 {
-        font-size: 5.5rem;
+        font-size: 3.5rem;
         background-color: rgba($deepTuscanRed, 0.8);
         box-decoration-break: clone;
-        padding: 1.5rem;
+        padding: 1rem 0.5rem;
+    }
+    @media (min-width: 600px) {
+        h2 {
+            font-size: 5.5rem;
+            padding: 1.5rem;
+        }
     }
 }
 .call-to-action {
