@@ -54,6 +54,27 @@ header {
         font-size: 2rem;
     }
 }
+.equipment-overhead {
+    width: 100%;
+    height: 35rem;
+    margin-right: 0;
+    margin-left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/equipment-overhead.jpg');
+    color: $snow;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        font-size: 5.5rem;
+        background-color: rgba($deepTuscanRed, 0.8);
+        box-decoration-break: clone;
+        padding: 1.5rem;
+    }
+}
 .call-to-action {
     color: $deepTuscanRed;
     text-align: center;
