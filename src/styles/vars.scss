@@ -9,6 +9,7 @@ $onyx: #352D39;
 @mixin background-image-properties() {
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 // Sizes
