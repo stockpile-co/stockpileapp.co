@@ -46,11 +46,17 @@ header {
         background-image: url('../images/stockpile-tipi.svg');
         @include background-image-properties();
     }
-    @media (min-width: 500px) {
+    p {
+        text-align: center;
+    }
+    @media (min-width: 1022px) {
         .tipi {
             $tipi-size: 25rem;
             height: $tipi-size;
             width: $tipi-size;
+        }
+        p {
+            text-align: left;
         }
     }
 }
