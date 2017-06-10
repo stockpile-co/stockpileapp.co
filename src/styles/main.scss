@@ -6,6 +6,9 @@ body {
 h1, h2 {
     letter-spacing: 1px; /* Override Skeleton */
 }
+p {
+    font-size: 2rem;
+}
 nav {
     height: 8rem;
     margin-bottom: 2rem;
@@ -48,9 +51,6 @@ header {
             height: $tipi-size;
             width: $tipi-size;
         }
-    }
-    p {
-        font-size: 2rem;
     }
 }
 .equipment-overhead {
