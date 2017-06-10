@@ -1,6 +1,12 @@
 @import 'vars.scss';
 @import 'nav.scss';
 
+* {
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
 body {
     font-family: 'Assistant', sans-serif;
 }
