@@ -8,6 +8,7 @@ h1, h2 {
 }
 p {
     font-size: 2rem;
+    text-align: left;
 }
 nav {
     height: 8rem;
@@ -36,7 +37,7 @@ nav {
 }
 header {
     &.container { /* Override Skeleton */
-        margin-bottom: 2rem;
+        margin-bottom: 6rem;
     }
     .tipi {
         $tipi-size: 12rem;
@@ -52,6 +53,10 @@ header {
             width: $tipi-size;
         }
     }
+}
+section {
+    margin-bottom: 3rem;
+    padding: 1rem;
 }
 .equipment-overhead {
     width: 100%;
@@ -73,6 +78,32 @@ header {
         box-decoration-break: clone;
         padding: 1.5rem;
     }
+}
+.stockpile-inventory {
+    width: 100%;
+    height: 40rem;
+    background-image: url('../images/stockpile-inventory.png');
+    @include background-image-properties();
+}
+.stockpile-scan {
+    width: 100%;
+    height: 40rem;
+    background-image: url('../images/stockpile-scan.png');
+    @include background-image-properties();
+}
+.photography-kit {
+    width: 100%;
+    height: 40rem;
+    background-image: url('../images/stockpile-scan.png');
+    @include background-image-properties();
+}
+.photography-kit {
+    width: 100%;
+    height: 40rem;
+    background-image: url('../images/photography-kit.png');
+    @include background-image-properties();
+}
+.photography-kit {
 }
 .call-to-action {
     color: $deepTuscanRed;
