@@ -6,8 +6,8 @@ $deepTuscanRed: #6D435A;
 $onyx: #352D39;
 
 // Mixins
-@mixin background-image-properties() {
-    background-size: contain;
+@mixin background-image-properties($size) {
+    background-size: $size;
     background-repeat: no-repeat;
     background-position: center;
 }
