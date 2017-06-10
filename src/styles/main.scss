@@ -78,6 +78,9 @@ section {
     height: 100%;
     background-image: url('../images/photography-kit.png');
     @include background-image-properties();
+    @media (min-width: 600px) {
+        height: 30rem;
+    }
 }
 .call-to-action {
     color: $deepTuscanRed;
