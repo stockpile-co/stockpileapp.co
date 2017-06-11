@@ -16,7 +16,7 @@ h1, h2 {
 p {
     font-size: 2rem;
     text-align: center;
-    @media (min-width: 1022px) {
+    @media (min-width: $screen-md) {
         text-align: left;
     }
 }
@@ -37,7 +37,7 @@ header {
     p {
         text-align: center;
     }
-    @media (min-width: 1022px) {
+    @media (min-width: $screen-md) {
         .tipi {
             $tipi-size: 25rem;
             height: $tipi-size;
@@ -86,7 +86,7 @@ section {
         box-decoration-break: clone;
         padding: 1rem 0.5rem;
     }
-    @media (min-width: 600px) {
+    @media (min-width: $screen-sm) {
         h2 {
             font-size: 5.5rem;
             padding: 1.5rem;
