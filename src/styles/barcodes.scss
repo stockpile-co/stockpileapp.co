@@ -1,4 +1,5 @@
 @import 'nav.scss';
+@import 'footer.scss';
 
 h1, h2, h3 {
     color: $deepTuscanRed;
@@ -33,8 +34,4 @@ section {
     ol {
         list-style-type: lower-alpha;
     }
-}
-footer p {
-    padding-top: 3rem;
-    font-size: 1.5rem;
 }

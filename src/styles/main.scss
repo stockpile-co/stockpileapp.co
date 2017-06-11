@@ -1,5 +1,6 @@
 @import 'vars.scss';
 @import 'nav.scss';
+@import 'footer.scss';
 
 * {
     box-sizing: border-box;
@@ -105,8 +106,4 @@ section {
     h2 {
         margin-bottom: 0.5rem;
     }
-}
-footer p {
-    padding-top: 3rem;
-    font-size: 1.5rem;
 }
