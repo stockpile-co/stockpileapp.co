@@ -5,3 +5,15 @@ $paleTurquoise: #B1EDE8;
 $deepTuscanRed: #6D435A;
 $onyx: #352D39;
 
+// Mixins
+@mixin background-image-properties($size) {
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+// Breakpoints
+$screen-xs: 30em;
+$screen-sm: 48em;
+$screen-md: 64em;
+$screen-lg: 75em;

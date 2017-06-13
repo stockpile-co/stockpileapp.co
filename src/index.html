@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Stockpile</title>
-        <meta name="description" content="Stockpile privacy policy.">
+        <meta name="description" content="Stockpile is an app that manages stuff for organizations.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/favicon.ico">
@@ -11,25 +11,98 @@
         <link rel="icon" href="images/favicon-32.png" sizes="32x32">
         <link rel="icon" href="images/favicon-192.png" sizes="192x192">
 
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/skeleton.css">
         <link href="https://fonts.googleapis.com/css?family=Assistant:400" rel="stylesheet">
-        <style>
-         main {
-             font-family: 'Assistant', sans-serif;
-             text-align: center;
-         }
-         main img {
-             margin-top: 15%;
-         }
-        </style>
+
+        <link href="styles/normalize.css" rel="stylesheet">
+        <link href="styles/flexboxgrid.css" rel="stylesheet">
+        <link href="styles/skeleton.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
     </head>
     <body>
-        <main class="container">
-            <img src="images/favicon-500.png" width="300" height="300" alt="Stockpile Logo">
-            <h1>Stockpile</h1>
-            <h2>Manage your stuff</h2>
-            Contact <a mailto="info@stockpileapp.co">info@stockpileapp.co</a> for support.
+        <nav>
+            <div class="container">
+                <h1>
+                    <a href="/" class="stockpile-logo"></a>
+                </h1>
+            </div>
+        </nav>
+        <header class="container">
+            <div class="row around-xs">
+                <div class="col-xs col-md-3">
+                    <div class="tipi"></div>
+                </div>
+                <div class="col-xs-12 center-xs col-md-6 start-md">
+                    <h2>Manage your stuff.</h2>
+                    <p>
+                        Stockpile is the simplest way to manage your inventory,
+                        no matter what you have on your shelves.
+                    </p>
+                    <a href="/subscribe">
+                        <button class="button-primary">Get Stockpile</button>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="feature row center-xs middle-xs">
+                <div class="col-xs-12 col-md-3">
+                    <h2>Build an Inventory</h2>
+                    <p>
+                        With Stockpile, you can add anything with a barcode on
+                        it to your inventory.
+                    </p>
+                    <p>
+                        Each item has a brand, model, and category.
+                    </p>
+                    <p>
+                        Use these fields to filter your inventory to
+                        find exactly what you need.
+                    </p>
+                </div>
+                <div class="col-xs-12 first-xs col-md-3 last-md">
+                    <div class="image stockpile-inventory"></div>
+                </div>
+            </section>
+            <section class="feature row center-xs middle-xs">
+                <div class="col-xs-12 col-md-3">
+                    <div class="image stockpile-scan"></div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <h2>Track Usage</h2>
+                    <p>
+                        To rent an item, all you have to do is scan its barcode
+                        and select a return date.
+                    </p>
+                    <p>
+                        To return items, simply scan them again.
+                    </p>
+                </div>
+            </section>
+            <section class="feature row center-xs middle-xs">
+                <div class="col-xs-12 col-md-3">
+                    <h2>Create Kits</h2>
+                    <p>
+                        Kits help you remember what to rent, taking
+                        the stress out of the rental process.
+                    </p>
+                </div>
+                <div class="col-xs-12 first-xs col-md-3 last-md">
+                    <div class="image photography-kit"></div>
+                </div>
+            </section>
+            <section class="equipment-overhead">
+                <h2>Stockpile is for Your Team</h2>
+            </section>
+            <section class="call-to-action">
+                <h2>$20 per month</h2>
+                <h4>unlimited items and unlimited users</h4>
+                <a href="/subscribe">
+                    <button class="button-primary">sign up now</button>
+                </a>
+            </section>
         </main>
+        <footer class="container">
+            <p>Contact <a mailto="info@stockpileapp.co">info@stockpileapp.co</a> for support.</p>
+        </footer>
     </body>
 </html>

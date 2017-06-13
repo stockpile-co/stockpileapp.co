@@ -1,3 +1,5 @@
+@import 'vars.scss';
+
 /*
 * Skeleton V2.0.1
 * Copyright 2014, Dave Gamache
@@ -16,16 +18,39 @@ $color-button-font: #555;
 $color-button-border: #bbb;
 $color-button-focus-active-border: #888;
 $color-button-focus-active-font: #333;
-$color-button-primary-font:  #FFF;
-$color-button-primary-border: #33C3F0;
-$color-button-primary-background: #33C3F0;
-$color-button-primary-focus-active-font: #FFF;
-$color-button-primary-focus-active-border: #1EAEDB;
-$color-button-primary-focus-active-background: #1EAEDB;
+$color-button-primary-font: $snow;
+$color-button-primary-border: $begonia;
+$color-button-primary-background: $begonia;
+$color-button-primary-focus-active-font: $begonia;
+$color-button-primary-focus-active-border: $begonia;
+$color-button-primary-focus-active-background: $snow;
 $color-input-border: #D1D1D1;
 $color-input-background:  #fff;
 $color-input-focus-border: #33C3F0;
 $color-table-border-bottom: #E1E1E1;
+
+/* Grid (just container)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+      width: 80%; }
+}
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

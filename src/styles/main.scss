@@ -1,0 +1,112 @@
+@import 'vars.scss';
+@import 'nav.scss';
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Assistant', sans-serif;
+}
+h1, h2 {
+    letter-spacing: 1px; /* Override Skeleton */
+}
+p {
+    font-size: 2rem;
+    text-align: center;
+    @media (min-width: $screen-md) {
+        text-align: left;
+    }
+}
+header {
+    &.container { /* Override Skeleton */
+        padding-top: 8rem;
+        margin-bottom: 8rem;
+    }
+    .tipi {
+        $tipi-size: 12rem;
+        height: $tipi-size;
+        width: $tipi-size;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url('../images/stockpile-tipi.svg');
+        @include background-image-properties(contain);
+    }
+    p {
+        text-align: center;
+    }
+    @media (min-width: $screen-md) {
+        .tipi {
+            $tipi-size: 25rem;
+            height: $tipi-size;
+            width: $tipi-size;
+        }
+        p {
+            text-align: left;
+        }
+    }
+}
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+}
+.feature h2 {
+    color: $deepTuscanRed;
+    @media(min-width: $screen-md) {
+        text-align: left;
+    }
+}
+.image {
+    width: 100%;
+    min-height: 40rem;
+    margin-bottom: 2rem;
+    @include background-image-properties(contain);
+}
+.stockpile-inventory {
+    background-image: url('../images/stockpile-inventory.png');
+}
+.stockpile-scan {
+    background-image: url('../images/stockpile-scan.png');
+}
+.photography-kit {
+    background-image: url('../images/photography-kit.png');
+    min-height: 25rem;
+}
+.equipment-overhead {
+    width: 100%;
+    height: 35rem;
+    margin-right: 0;
+    margin-left: 0;
+    @include background-image-properties(cover);
+    background-image: url('../images/equipment-overhead.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+        text-align: center;
+        color: $snow;
+        font-size: 3.5rem;
+        background-color: rgba($deepTuscanRed, 0.8);
+        box-decoration-break: clone;
+        padding: 1rem 0.5rem;
+    }
+    @media (min-width: $screen-sm) {
+        h2 {
+            font-size: 5.5rem;
+            padding: 1.5rem;
+        }
+    }
+}
+.call-to-action {
+    color: $deepTuscanRed;
+    text-align: center;
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+}
+footer p {
+    padding-top: 3rem;
+    font-size: 1.5rem;
+}
