@@ -1,0 +1,40 @@
+@import 'nav.scss';
+@import 'footer.scss';
+
+h1, h2, h3 {
+    color: $deepTuscanRed;
+}
+section {
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.barcode-recommendations {
+    padding-top: 2rem;
+    section {
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 15rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h3 {
+        margin-top: 1rem;
+    }
+    .rectangular {
+        max-width: 30rem;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.how-to-order-tags ol {
+    font-size: 1.75rem;
+    ol {
+        list-style-type: lower-alpha;
+    }
+}
