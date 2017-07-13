@@ -95,6 +95,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp.src([
     // Must explicitly list each script in the list below
+      './src/scripts/subscribe.js'
   ])
     .pipe($.newer('.tmp/scripts'))
     .pipe($.sourcemaps.init())

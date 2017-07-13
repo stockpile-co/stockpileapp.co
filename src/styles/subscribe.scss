@@ -1,5 +1,55 @@
+@import 'vars.scss';
 @import 'nav.scss';
 
+* {
+    box-sizing: border-box;
+}
+html, body {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Assistant', sans-serif;
+}
+h1, h2 {
+    letter-spacing: 1px; /* Override Skeleton */
+}
 h1 {
     color: $deepTuscanRed;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    section {
+        width: 100%;
+    }
+}
+form {
+    label,
+    input,
+    .form-row {
+        text-align: left;
+        width: 35rem;        
+    }
+    .form-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+    }
+    .field-description,
+    .field-error {
+        margin-bottom: 0;
+        font-size: 85%;
+    }
+    .field-error {
+        color: $begonia;
+    }
+}
+.StripeElement {
+    border: 1px solid #D1D1D1;
+    height: 36px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
 }

@@ -1,38 +1,95 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Subscribe | Stockpile</title>
-        <meta name="description" content="Stockpile is an app that manages stuff for organizations.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" href="/favicon.ico">
-        <link rel="apple-touch-icon-precomposed" href="../images/favicon-152.png">
-        <link rel="icon" href="../images/favicon-32.png" sizes="32x32">
-        <link rel="icon" href="../images/favicon-192.png" sizes="192x192">
+<head>
+    <meta charset="utf-8">
+    <title>Subscribe | Stockpile</title>
+    <meta name="description" content="Stockpile is an app that manages stuff for organizations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://fonts.googleapis.com/css?family=Assistant:400" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon-152.png">
+    <link rel="icon" href="../images/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="../images/favicon-192.png" sizes="192x192">
 
-        <link href="../styles/flexboxgrid.css" rel="stylesheet">
-        <link href="../styles/global.css" rel="stylesheet">
-        <link href="../styles/skeleton.css" rel="stylesheet">
-        <link href="../styles/subscribe.css" rel="stylesheet">
-    </head>
-    <body>
-        <nav>
-            <div class="container">
-                <h1>
-                    <a href="/" class="stockpile-logo"></a>
-                </h1>
-            </div>
-        </nav>
-        <header class="container">
-            <h1>Registration is Coming Soon</h1>
-            <p>
-                Contact
-                <a mailto="info@stockpileapp.co">info@stockpileapp.co</a>
-                if you are interested in trying the beta.
-            </p>
-        </header>
-    </body>
+    <link href="https://fonts.googleapis.com/css?family=Assistant:400" rel="stylesheet">
+
+    <link href="../styles/flexboxgrid.css" rel="stylesheet">
+    <link href="../styles/skeleton.css" rel="stylesheet">
+    <link href="../styles/global.css" rel="stylesheet">
+    <link href="../styles/subscribe.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>
+                <a href="/" class="stockpile-logo"></a>
+            </h1>
+        </div>
+    </nav>
+    <header class="container">
+        <h1>Subscribe</h1>
+        <p>
+            Sign your organization up to start using Stockpile.
+            The user you create below will be the administrator of your organization.
+        </p>
+    </header>
+    <main>
+        <section class="row center-xs middle-xs">
+            <form class="col-xs-12 col-md-6" action="" id="payment-form">
+                <section class="form-row">
+                    <h5>User</h5>                
+                    <label for="first-name">
+                        First Name
+                    </label>
+                    <input id="first-name" name="fname" type="text" placeholder="John" required autocomplete="given-name">
+                    <label for="last-name">
+                        Last Name
+                    </label>
+                    <input id="last-name" name="lname" type="text" placeholder="Smith" required autocomplete="family-name">
+                    <label for="user-email">
+                        Email
+                        <p class="field-description">
+                            For signing in and for communication about your account.
+                        </p>
+                    </label>
+                    <input id="user-email" name="email" type="email" placeholder="johnsmith@example.com" required autocomplete="email">
+                    <label for="password">
+                        Password
+                        <p class="field-description">
+                            Must have at least ten characters and use uppercase, lowercase, numbers, and/or punctuation.
+                        </p>
+                        <p id="password-error" class="field-error"></p>
+                    </label>
+                    <input id="password" name="password" type="password" required minlength="10" maxlength="128" autocomplete="new-password">
+                </section>
+                <section class="form-row">
+                    <h5>Organization</h5>
+                    <label for="organization-name">
+                        Name
+                    </label>
+                    <input id="organization-name" type="text" placeholder="Tipi Productions" required>
+                    <label for="organization-email">
+                        Email
+                        <p class="field-description">
+                            For communication about your subscription.
+                        </p>
+                    </label>
+                    <input id="organization-email" type="text" placeholder="info@example.com" required autocomplete="email">
+                    <label for="card-element">
+                        Credit or debit card
+                    </label>
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </section>
+                <button class="button-primary">Subscribe</button>
+            </form>
+        </section>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="/scripts/owasp-password-strength-test.js"></script>
+        <script src="/scripts/subscribe.js"></script>
+    </main>
+</body>
+
 </html>
