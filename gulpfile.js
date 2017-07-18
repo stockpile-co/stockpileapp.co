@@ -17,13 +17,11 @@
  *
  */
 
-'use strict'
-
-import gulp from 'gulp'
-import del from 'del'
-import runSequence from 'run-sequence'
-import browserSync from 'browser-sync'
-import gulpLoadPlugins from 'gulp-load-plugins'
+const gulp = require('gulp')
+const del = require('del')
+const runSequence = require('run-sequence')
+const browserSync = require('browser-sync')
+const gulpLoadPlugins = require('gulp-load-plugins')
 
 const $ = gulpLoadPlugins()
 const reload = browserSync.reload
@@ -92,21 +90,23 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
 })
 
-// Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
-// to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
-// `.babelrc` file.
+// Concatenate, transpile, and minify JavaScript.
+// Cannot use ES2015 features like async/await without a polyfill
 gulp.task('scripts', () =>
     gulp.src([
-      // Must explicitly list each script in the list below:
-      // './src/js/main.js'
+      // Must explicitly list each script in the list below
     ])
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
-      .pipe($.babel())
+      .pipe($.babel({
+        "presets": ["es2015"],
+        "retainLines": true
+      }))
       .pipe($.sourcemaps.write())
-      .pipe(gulp.dest('.tmp/scripts'))
-      .pipe($.concat('main.min.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
+      .pipe($.uglify({preserveComments: 'some'})
+      .on('error', function(e){
+        console.error(e.toString())
+      }))
       // Output files
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
