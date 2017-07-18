@@ -93,27 +93,27 @@ gulp.task('styles', () => {
 // Concatenate, transpile, and minify JavaScript.
 // Cannot use ES2015 features like async/await without a polyfill
 gulp.task('scripts', () =>
-    gulp.src([
-      // Must explicitly list each script in the list below
-    ])
-      .pipe($.newer('.tmp/scripts'))
-      .pipe($.sourcemaps.init())
-      .pipe($.babel({
-        "presets": ["es2015"],
-        "retainLines": true
-      }))
-      .pipe($.sourcemaps.write())
-      .pipe($.uglify({output:
+  gulp.src([
+    // Must explicitly list each script in the list below
+  ])
+    .pipe($.newer('.tmp/scripts'))
+    .pipe($.sourcemaps.init())
+    .pipe($.babel({
+      'presets': ['es2015'],
+      'retainLines': true
+    }))
+    .pipe($.sourcemaps.write())
+    .pipe($.uglify({output:
         {comments: 'some'} // Maintain license comments
-      })
-      .on('error', function(e){
+    })
+      .on('error', function (e) {
         console.error(e.toString())
       }))
-      // Output files
-      .pipe($.size({title: 'scripts'}))
-      .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/scripts'))
-      .pipe(gulp.dest('.tmp/scripts'))
+  // Output files
+    .pipe($.size({title: 'scripts'}))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(gulp.dest('.tmp/scripts'))
 )
 
 // Scan your HTML for assets & optimize them
