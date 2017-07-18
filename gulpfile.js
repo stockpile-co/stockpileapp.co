@@ -17,14 +17,11 @@
  *
  */
 
-'use strict'
-
-import gulp from 'gulp'
-import del from 'del'
-import runSequence from 'run-sequence'
-import browserSync from 'browser-sync'
-import gulpLoadPlugins from 'gulp-load-plugins'
-import {output as pagespeed} from 'psi'
+const gulp = require('gulp')
+const del = require('del')
+const runSequence = require('run-sequence')
+const browserSync = require('browser-sync')
+const gulpLoadPlugins = require('gulp-load-plugins')
 
 const $ = gulpLoadPlugins()
 const reload = browserSync.reload
@@ -93,26 +90,30 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp/styles'))
 })
 
-// Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
-// to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
-// `.babelrc` file.
+// Concatenate, transpile, and minify JavaScript.
+// Cannot use ES2015 features like async/await without a polyfill
 gulp.task('scripts', () =>
-    gulp.src([
-      // Must explicitly list each script in the list below:
-      // './src/js/main.js'
-    ])
-      .pipe($.newer('.tmp/scripts'))
-      .pipe($.sourcemaps.init())
-      .pipe($.babel())
-      .pipe($.sourcemaps.write())
-      .pipe(gulp.dest('.tmp/scripts'))
-      .pipe($.concat('main.min.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
-      // Output files
-      .pipe($.size({title: 'scripts'}))
-      .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/scripts'))
-      .pipe(gulp.dest('.tmp/scripts'))
+  gulp.src([
+    // Must explicitly list each script in the list below
+  ])
+    .pipe($.newer('.tmp/scripts'))
+    .pipe($.sourcemaps.init())
+    .pipe($.babel({
+      'presets': ['es2015'],
+      'retainLines': true
+    }))
+    .pipe($.sourcemaps.write())
+    .pipe($.uglify({output:
+        {comments: 'some'} // Maintain license comments
+    })
+      .on('error', function (e) {
+        console.error(e.toString())
+      }))
+  // Output files
+    .pipe($.size({title: 'scripts'}))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(gulp.dest('.tmp/scripts'))
 )
 
 // Scan your HTML for assets & optimize them
@@ -181,12 +182,3 @@ gulp.task('default', ['clean'], cb =>
     cb
   )
 )
-
-// Run PageSpeed Insights
-gulp.task('pagespeed', cb =>
-  // Update the below URL to the public URL of your site
-  pagespeed('stockpileapp.co', {
-    strategy: 'mobile'
-  }, cb)
-)
-
