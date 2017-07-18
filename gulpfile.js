@@ -103,7 +103,9 @@ gulp.task('scripts', () =>
         "retainLines": true
       }))
       .pipe($.sourcemaps.write())
-      .pipe($.uglify({preserveComments: 'some'})
+      .pipe($.uglify({output:
+        {comments: 'some'} // Maintain license comments
+      })
       .on('error', function(e){
         console.error(e.toString())
       }))
