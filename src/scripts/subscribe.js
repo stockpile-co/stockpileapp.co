@@ -1,4 +1,6 @@
-import owaspPasswordStrengthTest from 'owasp-password-strength-test';
+/* global Stripe */
+
+import owaspPasswordStrengthTest from 'owasp-password-strength-test'
 
 const stripe = Stripe('pk_test_vwzyWkXWLZkAiPQ7MrDn9Paw')
 const elements = stripe.elements()
@@ -43,31 +45,31 @@ card.mount('#card-element')
 
 // Validation
 card.addEventListener('change', ({ error }) => {
-  const displayError = document.getElementById('card-errors');
+  const displayError = document.getElementById('card-errors')
   if (error) {
-    displayError.textContent = error.message;
+    displayError.textContent = error.message
   } else {
-    displayError.textContent = '';
+    displayError.textContent = ''
   }
 })
 
 // Form submission
-const form = document.getElementById('payment-form');
+const form = document.getElementById('payment-form')
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
+  event.preventDefault()
 
   stripe.createToken(card)
     .then(({ token, error }) => {
       if (error) {
         // Inform the user if there was an error
-        const errorElement = document.getElementById('card-errors');
-        errorElement.textContent = error.message;
+        const errorElement = document.getElementById('card-errors')
+        errorElement.textContent = error.message
       } else {
         // Send the token to your server
-        createSubscription(token);
+        createSubscription(token)
       }
     })
-});
+})
 
 // Password validation
 const checkPassword = (password) => {
@@ -76,7 +78,7 @@ const checkPassword = (password) => {
     maxLength: 128,
     minLength: 10,
     minPhraseLength: 15,
-    minOptionalTestsToPass: 4,
+    minOptionalTestsToPass: 4
   })
 
   try {
@@ -85,8 +87,6 @@ const checkPassword = (password) => {
   } catch (err) {
     throw new Error('Could not check password strength.', err || '')
   }
-
-  return ''
 }
 
 const passwordField = document.querySelector('#password')
