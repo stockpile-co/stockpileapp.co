@@ -103,6 +103,7 @@ gulp.task('scripts', () =>
       'presets': ['es2015'],
       'retainLines': true
     }))
+    .pipe($.browserify()) // Add support for require()
     .pipe($.sourcemaps.write())
     .pipe($.uglify({output:
         {comments: 'some'} // Maintain license comments
