@@ -1,3 +1,5 @@
+import owaspPasswordStrengthTest from 'owasp-password-strength-test';
+
 const stripe = Stripe('pk_test_vwzyWkXWLZkAiPQ7MrDn9Paw')
 const elements = stripe.elements()
 
