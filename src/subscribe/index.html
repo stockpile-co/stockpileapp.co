@@ -43,18 +43,21 @@
                     <label for="first-name">
                         First Name
                     </label>
-                    <input id="first-name" name="fname" type="text" placeholder="John" required autocomplete="given-name">
+                    <input id="first-name" name="fname" type="text" placeholder="John" required
+                        autocomplete="section-user given-name">
                     <label for="last-name">
                         Last Name
                     </label>
-                    <input id="last-name" name="lname" type="text" placeholder="Smith" required autocomplete="family-name">
+                    <input id="last-name" name="lname" type="text" placeholder="Smith" required
+                        autocomplete="section-user family-name">
                     <label for="user-email">
                         Email
                         <p class="field-description">
                             For signing in and for communication about your account.
                         </p>
                     </label>
-                    <input id="user-email" name="email" type="email" placeholder="johnsmith@example.com" required autocomplete="email">
+                    <input id="user-email" name="email" type="email" placeholder="johnsmith@example.com" required
+                        autocomplete="section-user home email">
                     <label for="password">
                         Password
                         <p class="field-description">
@@ -62,21 +65,24 @@
                         </p>
                         <p id="password-error" class="field-error"></p>
                     </label>
-                    <input id="password" name="password" type="password" required minlength="10" maxlength="128" autocomplete="new-password">
+                    <input id="password" name="password" type="password" required minlength="10" maxlength="128" 
+                        autocomplete="section-user new-password">
                 </section>
                 <section class="form-row">
                     <h5>Organization</h5>
                     <label for="organization-name">
                         Name
                     </label>
-                    <input id="organization-name" type="text" placeholder="Tipi Productions" required>
+                    <input id="organization-name" type="text" placeholder="Tipi Productions" required
+                        autocomplete="section-organization organization">
                     <label for="organization-email">
                         Email
                         <p class="field-description">
                             For communication about your subscription.
                         </p>
                     </label>
-                    <input id="organization-email" type="text" placeholder="info@example.com" required autocomplete="email">
+                    <input id="organization-email" type="text" placeholder="info@example.com" required
+                        autocomplete="section-organization work email">
                     <label for="card-element">
                         Credit or debit card
                     </label>
