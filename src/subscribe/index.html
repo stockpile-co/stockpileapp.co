@@ -36,8 +36,8 @@
         </p>
     </header>
     <main>
-        <section class="row center-xs middle-xs">
-            <form class="col-xs-12 col-md-6" action="" id="payment-form">
+        <section class="subscribe row center-xs middle-xs">
+            <form class="col-xs-12 col-md-6" id="payment-form">
                 <section class="form-row">
                     <h5>User</h5>                
                     <label for="first-name">
@@ -89,8 +89,28 @@
                     <div id="card-element"></div>
                     <div id="card-errors" role="alert"></div>
                 </section>
-                <button class="button-primary">Subscribe</button>
+                <p class="errors" id="form-errors" role="alert"></p>
+                <button type="submit" id="subscribe-button" class="button-primary">Subscribe</button>
             </form>
+        </section>
+        <section class="subscribed hidden row container center-xs middle-xs">
+            <div class="col-xs-12 col-md-6">
+                <h3>Subscribed!</h3>
+                <p>Congratulations, your organization is ready to use Stockpile.</p>
+                <h4>Download the app:</h4>
+                <section class="row center-xs space-around">
+                    <div class="col-xs-12 col-md-3">
+                        <a href="https://itunes.apple.com/us/app/stockpile-manage-your-stuff/id1234040614?mt=8">
+                            <img alt="Get it on the iTunes Store" src="/images/subscribe/itunes.svg">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <a href="https://play.google.com/store/apps/details?id=co.stockpileapp.stockpile">
+                            <img alt="Get it on Google Play" src="/images/subscribe/google-play.svg"/>
+                        </a>
+                    </div>
+                </section>
+            </div>
         </section>
         <script src="https://js.stripe.com/v3/"></script>
         <script src="/scripts/subscribe.js"></script>

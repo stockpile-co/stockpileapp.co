@@ -2,16 +2,39 @@
 
 import owaspPasswordStrengthTest from 'owasp-password-strength-test'
 
-const stripe = Stripe('pk_test_vwzyWkXWLZkAiPQ7MrDn9Paw')
+const stripe = Stripe('pk_live_3kEwvZb7NGvXEXop1q2b1sJI')
 const elements = stripe.elements()
 
+const subscribeButton = document.querySelector('#subscribe-button')
+const formErrors = document.querySelector('#form-errors')
+
+const handleResponse = (res) => {
+  // Subscription created
+  if (res.status === 201) {
+    document.querySelector('section.subscribe').classList.toggle('hidden')
+    document.querySelector('section.subscribed').classList.toggle('hidden')
+
+    // Failed to create subscription
+  } else {
+    res.json().then((body) => {
+      if (res.status < 500 && body) {
+        formErrors.textContent = body.message
+      } else {
+        formErrors.textContent = 'Something went wrong. Please contact info@stockpileapp.co for help.'
+        console.error(`Error: ${body.message}`)
+      }
+    })
+  }
+
+  subscribeButton.textContent = 'Subscribe'
+}
+
 const createSubscription = (token) => {
-  console.log(token)
   const body = {
+    token: token.id,
     organization: {
       name: document.querySelector('#organization-name').value,
-      email: document.querySelector('#organization-email').value,
-      token: token.id
+      email: document.querySelector('#organization-email').value
     },
     user: {
       firstName: document.querySelector('#first-name').value,
@@ -21,14 +44,16 @@ const createSubscription = (token) => {
     }
   }
 
-  fetch('http://localhost:7862/subscription', {
+  fetch('/api/subscription', {
     method: 'POST',
-    body
-  }).then((res) => {
-    console.log(res)
-  })
+    body: JSON.stringify(body),
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    })
+  }).then(handleResponse)
 }
 
+// Stripe Elements
 const style = {
   base: {
     lineHeight: '28px',
@@ -58,14 +83,16 @@ const form = document.getElementById('payment-form')
 form.addEventListener('submit', (event) => {
   event.preventDefault()
 
+  subscribeButton.textContent = 'Loading...'
+  formErrors.textContent = ''
+
   stripe.createToken(card)
     .then(({ token, error }) => {
       if (error) {
-        // Inform the user if there was an error
         const errorElement = document.getElementById('card-errors')
         errorElement.textContent = error.message
+        subscribeButton.textContent = 'Subscribe'
       } else {
-        // Send the token to your server
         createSubscription(token)
       }
     })

@@ -16,14 +16,6 @@ h1, h2 {
 h1 {
     color: $deepTuscanRed;
 }
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    section {
-        width: 100%;
-    }
-}
 form {
     label,
     input,
@@ -41,7 +33,8 @@ form {
         margin-bottom: 0;
         font-size: 85%;
     }
-    .field-error {
+    .field-error,
+    .errors {
         color: $begonia;
     }
 }
@@ -52,4 +45,7 @@ form {
     border-radius: 4px;
     box-shadow: none;
     background: #fff;
+}
+section.hidden {
+    display: none;
 }
