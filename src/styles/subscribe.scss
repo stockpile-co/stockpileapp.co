@@ -1,30 +1,25 @@
 @import 'vars.scss';
 @import 'nav.scss';
 
-* {
-    box-sizing: border-box;
-}
-html, body {
-    overflow-x: hidden;
-}
-body {
-    font-family: 'Assistant', sans-serif;
-}
-h1, h2 {
-    letter-spacing: 1px; /* Override Skeleton */
-}
 h1 {
     color: $deepTuscanRed;
 }
-.instructions {
-    text-align: left;
+.subscribe {
+    width: 100%;
+    padding: 0 1rem;
+}
+@media (min-width: $screen-md) {
+    .subscribe {
+        padding: 0;
+    }
 }
 form {
     label,
     input,
     .form-row {
         text-align: left;
-        width: 35rem;        
+        width: 100%;
+        max-width: 35rem;
     }
     .form-row {
         margin-left: auto;

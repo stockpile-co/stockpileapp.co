@@ -33,13 +33,13 @@
     </header>
     <main>
         <section class="subscribe row container center-xs middle-xs">
-            <p class="instructions">
-                Sign your organization up to start using Stockpile.
-                The user you create below will be the administrator of your organization.
-            </p>
             <form class="col-xs-12 col-md-6" id="payment-form">
                 <section class="form-row">
-                    <h5>User</h5>                
+                    <h5>User</h5>
+                    <p>
+                        Your personal Stockpile account. You will be an administrator of the organization, which
+                        allows you to invite other users and manage inventory.
+                    </p>
                     <label for="first-name">
                         First Name
                     </label>
@@ -65,7 +65,7 @@
                         </p>
                         <p id="password-error" class="field-error"></p>
                     </label>
-                    <input id="password" name="password" type="password" required minlength="10" maxlength="128" 
+                    <input id="password" name="password" type="password" required minlength="10" maxlength="128"
                         autocomplete="section-user new-password">
                 </section>
                 <section class="form-row">
@@ -95,7 +95,7 @@
         </section>
         <section class="subscribed hidden row container center-xs middle-xs">
             <div class="col-xs-12 col-md-6">
-                <h3>Subscribed!</h3>
+                <h3>Successfully Subscribed!</h3>
                 <p>Congratulations, your organization is ready to use Stockpile.</p>
                 <h4>Download the app:</h4>
                 <section class="row center-xs space-around">
