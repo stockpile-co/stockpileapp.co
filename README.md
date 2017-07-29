@@ -1,3 +1,6 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce4644d0972e4a50985c1dfb9339c02c)](https://www.codacy.com/app/adamvig/stockpileapp.co)
+[![NSP Status](https://nodesecurity.io/orgs/stockpile-co/projects/bd7db3c7-f362-47b3-b653-195a745f1b14/badge)](https://nodesecurity.io/orgs/stockpile-co/projects/bd7db3c7-f362-47b3-b653-195a745f1b14)
+
 stockpileapp.co
 -----------------
 
