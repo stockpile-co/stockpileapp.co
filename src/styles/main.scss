@@ -2,18 +2,6 @@
 @import 'nav.scss';
 @import 'footer.scss';
 
-* {
-    box-sizing: border-box;
-}
-html, body {
-    overflow-x: hidden;
-}
-body {
-    font-family: 'Assistant', sans-serif;
-}
-h1, h2 {
-    letter-spacing: 1px; /* Override Skeleton */
-}
 p {
     font-size: 2rem;
     text-align: center;

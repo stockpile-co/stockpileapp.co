@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Assistant', sans-serif;
+}
+h1, h2 {
+    letter-spacing: 1px; /* Override Skeleton */
+}
+// Override flexboxgrid; margin on rows causes gap on right side of page
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
