@@ -42,11 +42,13 @@
                     </p>
                     <label for="first-name">
                         First Name
+                        <p class="field-error"></p>
                     </label>
                     <input id="first-name" name="fname" type="text" placeholder="John" required
                         autocomplete="section-user given-name">
                     <label for="last-name">
                         Last Name
+                        <p class="field-error"></p>
                     </label>
                     <input id="last-name" name="lname" type="text" placeholder="Smith" required
                         autocomplete="section-user family-name">
@@ -55,6 +57,7 @@
                         <p class="field-description">
                             For signing in and for communication about your account.
                         </p>
+                        <p class="field-error"></p>
                     </label>
                     <input id="user-email" name="email" type="email" placeholder="johnsmith@example.com" required
                         autocomplete="section-user home email">
@@ -72,6 +75,7 @@
                     <h5>Organization</h5>
                     <label for="organization-name">
                         Name
+                        <p class="field-error"></p>
                     </label>
                     <input id="organization-name" type="text" placeholder="Tipi Productions" required
                         autocomplete="section-organization organization">
@@ -80,6 +84,7 @@
                         <p class="field-description">
                             For communication about your subscription.
                         </p>
+                        <p class="field-error"></p>
                     </label>
                     <input id="organization-email" type="text" placeholder="info@example.com" required
                         autocomplete="section-organization work email">
