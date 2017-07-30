@@ -103,7 +103,7 @@ const checkPassword = (password) => {
   owaspPasswordStrengthTest.config({
     allowPassphrases: true,
     maxLength: 128,
-    minLength: 10,
+    minLength: 8,
     minPhraseLength: 15,
     minOptionalTestsToPass: 4
   })
