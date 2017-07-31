@@ -1,5 +1,49 @@
+@import 'vars.scss';
 @import 'nav.scss';
 
 h1 {
     color: $deepTuscanRed;
+}
+.subscribe {
+    width: 100%;
+    padding: 0 1rem;
+}
+@media (min-width: $screen-md) {
+    .subscribe {
+        padding: 0;
+    }
+}
+form {
+    label,
+    input,
+    .form-row {
+        text-align: left;
+        width: 100%;
+        max-width: 35rem;
+    }
+    .form-row {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+    }
+    .field-description,
+    .field-error {
+        margin-bottom: 0;
+        font-size: 85%;
+    }
+    .field-error,
+    .errors {
+        color: $begonia;
+    }
+}
+.StripeElement {
+    border: 1px solid #D1D1D1;
+    height: 36px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+}
+section.hidden {
+    display: none;
 }

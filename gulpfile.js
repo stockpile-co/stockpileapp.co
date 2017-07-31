@@ -95,6 +95,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp.src([
     // Must explicitly list each script in the list below
+    './src/scripts/subscribe.js'
   ])
     .pipe($.newer('.tmp/scripts'))
     .pipe($.sourcemaps.init())
@@ -102,6 +103,7 @@ gulp.task('scripts', () =>
       'presets': ['es2015'],
       'retainLines': true
     }))
+    .pipe($.browserify()) // Add support for require()
     .pipe($.sourcemaps.write())
     .pipe($.uglify({output:
         {comments: 'some'} // Maintain license comments
@@ -130,7 +132,6 @@ gulp.task('html', () => {
       collapseWhitespace: true,
       collapseBooleanAttributes: true,
       removeAttributeQuotes: true,
-      removeRedundantAttributes: true,
       removeEmptyAttributes: true,
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
@@ -178,6 +179,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
+    'scripts',
     ['html', 'images', 'copy'],
     cb
   )
