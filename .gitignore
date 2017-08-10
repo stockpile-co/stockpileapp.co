@@ -3,3 +3,9 @@ dist/
 .tmp/
 .DS_Store
 thumbs.db
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
