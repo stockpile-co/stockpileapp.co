@@ -117,7 +117,7 @@ const checkPassword = (password) => {
 }
 
 // Add custom validation to password field
-const passwordField = document.querySelector('#password')
+const passwordField = document.querySelector(`.field-error[data-for='password']`)
 passwordField.addEventListener('blur', event => {
   passwordField.setCustomValidity(checkPassword(event.target.value))
 })
@@ -128,7 +128,7 @@ for (const input of inputs) {
   input.addEventListener('blur', event => {
     // If field is invalid, show validation message
     if (!event.target.checkValidity()) {
-      const errorDisplay = document.querySelector(`label[for=${input.id}] .field-error`)
+      const errorDisplay = document.querySelector(`.field-error[data-for='${input.id}']`)
       if (errorDisplay) {
         errorDisplay.innerHTML = event.target.validationMessage
       }
