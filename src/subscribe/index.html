@@ -42,32 +42,32 @@
                     </p>
                     <label for="first-name">
                         First Name
-                        <p class="field-error"></p>
                     </label>
+                    <p data-for="first-name" class="field-error"></p>
                     <input id="first-name" name="fname" type="text" placeholder="John" required
                         autocomplete="section-user given-name">
                     <label for="last-name">
                         Last Name
-                        <p class="field-error"></p>
                     </label>
+                    <p data-for="last-name" class="field-error"></p>
                     <input id="last-name" name="lname" type="text" placeholder="Smith" required
                         autocomplete="section-user family-name">
                     <label for="user-email">
                         Email
-                        <p class="field-description">
-                            For signing in and for communication about your account.
-                        </p>
-                        <p class="field-error"></p>
                     </label>
+                    <p class="field-description">
+                        For signing in and for communication about your account.
+                    </p>
+                    <p data-for="user-email" class="field-error"></p>
                     <input id="user-email" name="email" type="email" placeholder="johnsmith@example.com" required
                         autocomplete="section-user home email">
                     <label for="password">
                         Password
-                        <p class="field-description">
-                            Must have at least ten characters and use uppercase, lowercase, numbers, and/or punctuation.
-                        </p>
-                        <p id="password-error" class="field-error"></p>
                     </label>
+                    <p class="field-description">
+                        Must have at least ten characters and use uppercase, lowercase, numbers, and/or punctuation.
+                    </p>
+                    <p data-for="password" class="field-error"></p>
                     <input id="password" name="password" type="password" required minlength="10" maxlength="128"
                         autocomplete="section-user new-password">
                 </section>
@@ -75,17 +75,17 @@
                     <h5>Organization</h5>
                     <label for="organization-name">
                         Name
-                        <p class="field-error"></p>
                     </label>
+                    <p data-for="organization-name" class="field-error"></p>
                     <input id="organization-name" type="text" placeholder="Tipi Productions" required
                         autocomplete="section-organization organization">
                     <label for="organization-email">
                         Email
-                        <p class="field-description">
-                            For communication about your subscription.
-                        </p>
-                        <p class="field-error"></p>
                     </label>
+                    <p class="field-description">
+                        For communication about your subscription.
+                    </p>
+                    <p data-for="organization-email" class="field-error"></p>
                     <input id="organization-email" type="text" placeholder="info@example.com" required
                         autocomplete="section-organization work email">
                     <label for="card-element">
