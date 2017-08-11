@@ -4,12 +4,13 @@
 h1 {
     color: $deepTuscanRed;
 }
-.subscribe {
-    width: 100%;
+.subscribe,
+.subscribed {
     padding: 0 1rem;
 }
 @media (min-width: $screen-md) {
-    .subscribe {
+    .subscribe,
+    .subscribed {
         padding: 0;
     }
 }
@@ -46,4 +47,7 @@ form {
 }
 section.hidden {
     display: none;
+}
+.subscribed {
+    text-align: left;
 }
