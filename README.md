@@ -4,6 +4,8 @@
 stockpileapp.co
 -----------------
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stockpile-co/stockpileapp.co.svg)](https://greenkeeper.io/)
+
 The public website for Stockpile, an app that manages stuff for organizations.
 
 To run locally for development: `npm run serve`  
